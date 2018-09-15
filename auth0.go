@@ -127,9 +127,6 @@ var emailProvider = `emails/provider`
 var guardianFactors = `guardian/factors`
 var guardianEnrollments = `guardian/enrollments`
 var jobs = `jobs`
-var stats = `stats`
-var tenants = `tenants`
-var tickets = `tickets`
 
 // GetClientGrants - get all client grants
 func GetClientGrants(query string) (gjson.Result, error) {
