@@ -614,7 +614,7 @@ func GetJobResults(id string) (gjson.Result, error) {
 // ExportUsers - create a job to export users
 func ExportUsers(body string) (gjson.Result, error) {
 	url := auth0DomainGlobal + mgmtAPIVersion + jobs + `/users-exports`
-	return restly.PostJSON(req, url, body, "")
+	return restlyPostJSON(req, url, body, "")
 }
 
 // ImportUsers - create a job to import users
@@ -626,41 +626,41 @@ func ImportUsers(query string) (gjson.Result, error) {
 // VerifyEmail - send a `verify email address` email
 func VerifyEmail(body string) (gjson.Result, error) {
 	url := auth0DomainGlobal + mgmtAPIVersion + jobs + `/verification-email`
-	return restly.PostJSON(req, url, body, "")
+	return restlyPostJSON(req, url, body, "")
 }
 
 // GetActiveUserCount - get active user count
 func GetActiveUserCount() (gjson.Result, error) {
 	url := auth0DomainGlobal + mgmtAPIVersion + `active-users`
-	return restly.GetJSON(req, url, "")
+	return restlyGetJSON(req, url, "")
 }
 
 // GetDailyStats - gets the number of logins that occurred int he entered data range
 func GetDailyStats(query string) (gjson.Result, error) {
 	url := auth0DomainGlobal + mgmtAPIVersion + `daily`
-	return restly.GetJSON(req, url, query)
+	return restlyGetJSON(req, url, query)
 }
 
 // GetTenantSettings - get tenant settings
 func GetTenantSettings() (gjson.Result, error) {
 	url := auth0DomainGlobal + mgmtAPIVersion + `tenants/settings`
-	return restly.GetJSON(req, url, "")
+	return restlyGetJSON(req, url, "")
 }
 
 // UpdateTenantSettings - update tenant settings
 func UpdateTenantSettings(body string) (gjson.Result, error) {
 	url := auth0DomainGlobal + mgmtAPIVersion + `tenants/settings`
-	return restly.PatchJSON(req, url, body, "")
+	return restlyPatchJSON(req, url, body, "")
 }
 
 // CreateEmailVerificationTicket - create email verification ticket
 func CreateEmailVerificationTicket(body string) (gjson.Result, error) {
 	url := auth0DomainGlobal + mgmtAPIVersion + `tickets/email-verification`
-	return restly.PostJSON(req, url, body, "")
+	return restlyPostJSON(req, url, body, "")
 }
 
 // CreatePasswordChangeTicket - carete a password change ticket
 func CreatePasswordChangeTicket(body string) (gjson.Result, error) {
 	url := auth0DomainGlobal + mgmtAPIVersion + `tickets/password-change`
-	return restly.PostJSON(req, url, body, "")
+	return restlyPostJSON(req, url, body, "")
 }
