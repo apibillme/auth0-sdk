@@ -10,12 +10,36 @@
   version = "1.1.1"
 
 [[projects]]
+  digest = "1:bd336ef5505b5ec83e64d621bb10b594883ffc4c05002d37bffcfe683e78d682"
+  name = "github.com/apibillme/stubby"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "5f859cd6c3aff4dbc36ea3f0d0094af70e079620"
+  version = "1.0.0"
+
+[[projects]]
   branch = "master"
   digest = "1:67c8fd38cd67297657a32ef729a12795bb4c263cfa3e15fa5c2de255e9339670"
   name = "github.com/beevik/etree"
   packages = ["."]
   pruneopts = "UT"
   revision = "90dafc1e1f114dfb9576218bb43c03fb854d1b34"
+
+[[projects]]
+  branch = "master"
+  digest = "1:f14d1b50e0075fb00177f12a96dd7addf93d1e2883c25befd17285b779549795"
+  name = "github.com/gopherjs/gopherjs"
+  packages = ["js"]
+  pruneopts = "UT"
+  revision = "0210a2f0f73c96103378b0b935f39868e5731809"
+
+[[projects]]
+  digest = "1:1e15f4e455f94aeaedfcf9c75b3e1c449b5acba1551c58446b4b45be507c707b"
+  name = "github.com/jtolds/gls"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "77f18212c9c7edc9bd6a33d383a7b545ce62f064"
+  version = "v4.2.1"
 
 [[projects]]
   digest = "1:cdbed6a7b574b13bbabcd8c36c5be56d6444789bab21fcd37d39655eab0b2141"
@@ -36,6 +60,30 @@
   pruneopts = "UT"
   revision = "ae7887de9fa5d2db4eaa8174a7eff2c1ac00f2da"
   version = "v1.1"
+
+[[projects]]
+  digest = "1:cc1c574c9cb5e99b123888c12b828e2d19224ab6c2244bda34647f230bf33243"
+  name = "github.com/smartystreets/assertions"
+  packages = [
+    ".",
+    "internal/go-render/render",
+    "internal/oglematchers",
+  ]
+  pruneopts = "UT"
+  revision = "7678a5452ebea5b7090a6b163f844c133f523da2"
+  version = "1.8.3"
+
+[[projects]]
+  digest = "1:a3e081e593ee8e3b0a9af6a5dcac964c67a40c4f2034b5345b2ad78d05920728"
+  name = "github.com/smartystreets/goconvey"
+  packages = [
+    "convey",
+    "convey/gotest",
+    "convey/reporting",
+  ]
+  pruneopts = "UT"
+  revision = "9e8dc3f972df6c8fcc0375ef492c24d0bb204857"
+  version = "1.6.3"
 
 [[projects]]
   digest = "1:2cab41f59638fdb77dda96ab4f9b5860ef30f48967557254eba127e43c756f2e"
@@ -78,6 +126,8 @@
   analyzer-version = 1
   input-imports = [
     "github.com/apibillme/restly",
+    "github.com/apibillme/stubby",
+    "github.com/smartystreets/goconvey/convey",
     "github.com/tidwall/gjson",
     "github.com/valyala/fasthttp",
   ]
