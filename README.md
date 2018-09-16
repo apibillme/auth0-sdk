@@ -17,21 +17,21 @@ go get github.com/apibillme/auth0-sdk
 
 ```go
 func main() {
-    auth0Domain := `example.auth0.com`
-    clientID := `X1V34JKDJEOMCNENR`
-    clientSecret := `secret`
+	auth0Domain := "example.auth0.com"
+	clientID := "XVJEKJDKJF"
+	clientSecret := "secret"
 
-    sdk, err := auth0sdk.New(auth0Domain, clientID, clientSecret)
-    if err != nil {
-        log.Panic("error!")
-    }
-    configs, err := sdk.GetRulesConfigs()
-    if err != nil {
-        log.Panic(err.Error())
-    }
-    for _, config := range configs {
-        name := config.Get("name").String()
-        log.Println(name)
-    }
+	err = auth0sdk.New(auth0Domain, clientID, clientSecret)
+	if err != nil {
+		log.Panic(err)
+	}
+	clients, err := auth0sdk.GetClients("")
+	if err != nil {
+		log.Panic(err)
+	}
+	for _, client := range clients.Array() {
+		name := client.Get("name").String()
+		log.Println(name)
+	}
 }
 ```
