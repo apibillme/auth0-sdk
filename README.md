@@ -35,3 +35,5 @@ func main() {
 	}
 }
 ```
+## Demo
+[Demo for Auth0-SDK](https://github.com/apibillme/auth0-sdk-demo)
