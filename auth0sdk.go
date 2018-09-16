@@ -28,7 +28,7 @@ func New(auth0Domain string, clientID string, clientSecret string) error {
 	auth0DomainGlobal = `https://` + auth0Domain
 
 	req = restly.New()
-	audience := auth0DomainGlobal + `/api/v2`
+	audience := auth0DomainGlobal + `/api/v2/`
 	body := `{"grant_type":"client_credentials", "client_id":"` + clientIDGlobal + `", "client_secret":"` + clientSecretGlobal + `", "audience":"` + audience + `"}`
 	url := auth0DomainGlobal + `/oauth/token`
 	res, err := restlyPostJSON(req, url, body, "")
