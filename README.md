@@ -7,7 +7,7 @@
 * Full Auth0-SDK for Go (golang)
 * Uses [restly](https://github.com/apibillme/restly) for API calls
 * Simple to understand, fix issues (if any), and add-on
-* Only about 700 LOC
+* Only about 650 LOC
 
 ```bash
 go get github.com/apibillme/auth0-sdk
