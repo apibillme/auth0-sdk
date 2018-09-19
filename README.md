@@ -25,13 +25,15 @@ func main() {
 	if err != nil {
 		log.Panic(err)
 	}
-	clients, err := auth0sdk.GetClients("")
+	clients, statusCode, err := auth0sdk.GetClients("")
 	if err != nil {
 		log.Panic(err)
 	}
-	for _, client := range clients.Array() {
-		name := client.Get("name").String()
-		log.Println(name)
+	if statusCode == 200 {
+		for _, client := range clients.Array() {
+			name := client.Get("name").String()
+			log.Println(name)
+		}
 	}
 }
 ```
