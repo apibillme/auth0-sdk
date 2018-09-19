@@ -36,6 +36,10 @@
   name = "github.com/tidwall/gjson"
   version = "v1.1.3"
 
+[[constraint]]
+  name = "github.com/spf13/cast"
+  version = "v1.2.0"  
+
 [prune]
   go-tests = true
   unused-packages = true
