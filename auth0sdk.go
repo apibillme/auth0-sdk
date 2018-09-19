@@ -1,7 +1,10 @@
 package auth0sdk
 
 import (
+	"errors"
 	"strings"
+
+	"github.com/spf13/cast"
 
 	"github.com/apibillme/restly"
 	"github.com/tidwall/gjson"
@@ -38,6 +41,8 @@ func New(auth0Domain string, clientID string, clientSecret string) error {
 	if statusCode == 200 {
 		accessToken := res.Get("access_token").String()
 		req.Header.Add("Authorization", "Bearer "+accessToken)
+	} else {
+		return errors.New("could not get token - Auth0 returned a " + cast.ToString(statusCode))
 	}
 	return nil
 }

@@ -15,14 +15,21 @@ func TestSpec(t *testing.T) {
 
 	Convey("New", t, func() {
 
-		Convey("New - success", func() {
-			stub := stubby.StubFunc(&restlyPostJSON, nil, 0, nil)
+		Convey("New - success - 200", func() {
+			stub := stubby.StubFunc(&restlyPostJSON, nil, 200, nil)
 			defer stub.Reset()
 			err := New("example.auth0.com", "XVJEDJFDKLSJLDFJ", "secret")
 			So(err, ShouldBeNil)
 		})
 
-		Convey("New - failure", func() {
+		Convey("New - failure - 500", func() {
+			stub := stubby.StubFunc(&restlyPostJSON, nil, 500, nil)
+			defer stub.Reset()
+			err := New("example.auth0.com", "XVJEDJFDKLSJLDFJ", "secret")
+			So(err, ShouldBeError)
+		})
+
+		Convey("New - failure - error", func() {
 			stub := stubby.StubFunc(&restlyPostJSON, nil, 0, errors.New("error"))
 			defer stub.Reset()
 			err := New("example.auth0.com", "XVJEDJFDKLSJLDFJ", "secret")
