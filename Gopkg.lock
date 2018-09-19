@@ -2,12 +2,12 @@
 
 
 [[projects]]
-  digest = "1:3531f911aec379f822933a9bc9fa942066827a1575f27114d72d89e0e05b01d9"
+  digest = "1:c6f710978ee8fa52bb97e5456e79cd0a7bc063078b6bf8303ad5567791eb18bf"
   name = "github.com/apibillme/restly"
   packages = ["."]
   pruneopts = "UT"
-  revision = "ad932ea1b80d3968f6e0760483340c43ad8ab637"
-  version = "1.1.1"
+  revision = "44b77466ba81c7c6eed4d234e88355a8fe5d937c"
+  version = "2.0.0"
 
 [[projects]]
   digest = "1:bd336ef5505b5ec83e64d621bb10b594883ffc4c05002d37bffcfe683e78d682"
@@ -111,7 +111,7 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:afc487740bbccfea39f03d9964360326532472ddb35ee8a2bd5165066b047b4f"
+  digest = "1:5a157bf2af4b1f7737360999d35b8b2f6148fd13e64e9b55b13a7cd8234e6a9e"
   name = "github.com/valyala/fasthttp"
   packages = [
     ".",
@@ -119,7 +119,7 @@
     "stackless",
   ]
   pruneopts = "UT"
-  revision = "10a0540dfcf69622265d6c2a04d1ae44b5b0b520"
+  revision = "da9ba61e3b95cf6e0b066e43daa9585e5708a0a7"
 
 [solve-meta]
   analyzer-name = "dep"

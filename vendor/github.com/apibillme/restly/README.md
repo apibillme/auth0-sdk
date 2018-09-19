@@ -7,7 +7,8 @@ This fast REST client combines [fasthttp](https://github.com/valyala/fasthttp#re
 
 ## Features:
 * Fully configurable fasthttp.Request struct
-* Auto encoding REST routes with client libraries ([gjson](https://github.com/tidwall/gjson#readme) & [etree](https://github.com/beevik/etree#readme)) with support for problem errors [RFC7807](https://tools.ietf.org/html/rfc7807)
+* Automatic encoding REST routes with client libraries ([gjson](https://github.com/tidwall/gjson#readme) & [etree](https://github.com/beevik/etree#readme)) with support for problem errors [RFC7807](https://tools.ietf.org/html/rfc7807)
+* Automatic encoding for query string parameters
 * About 100 LOC
 * About 10x faster than using net/http
 
@@ -24,25 +25,25 @@ jsonBody := `{"key":"value"}`
 
 xmlBody := `<?xml version="1.0" encoding="UTF-8"?><People><Person name="Jon"/></People></xml>`
 
-res, err := restly.GetJSON(req, "https://mockbin.com/request", "?foo=bar")
+res, statusCode, err := restly.GetJSON(req, "https://mockbin.com/request", "?foo=bar")
 	
-res, err := restly.DeleteJSON(req, "https://mockbin.com/request", "?foo=bar")
+res, statusCode, err := restly.DeleteJSON(req, "https://mockbin.com/request", "?foo=bar")
 	
-res, err := restly.PutJSON(req, "https://mockbin.com/request", jsonBody, "?foo=bar")
+res, statusCode, err := restly.PutJSON(req, "https://mockbin.com/request", jsonBody, "?foo=bar")
 	
-res, err := restly.PostJSON(req, "https://mockbin.com/request", jsonBody, "?foo=bar")
+res, statusCode, err := restly.PostJSON(req, "https://mockbin.com/request", jsonBody, "?foo=bar")
 	
-res, err := restly.PatchJSON(req, "https://mockbin.com/request", jsonBody, "?foo=bar")
+res, statusCode, err := restly.PatchJSON(req, "https://mockbin.com/request", jsonBody, "?foo=bar")
 
-res, err := restly.GetXML(req, "https://mockbin.com/request", "?foo=bar")
+res, statusCode, err := restly.GetXML(req, "https://mockbin.com/request", "?foo=bar")
 	
-res, err := restly.DeleteXML(req, "https://mockbin.com/request", "?foo=bar")
+res, statusCode, err := restly.DeleteXML(req, "https://mockbin.com/request", "?foo=bar")
 	
-res, err := restly.PutXML(req, "https://mockbin.com/request", xmlBody, "?foo=bar")
+res, statusCode, err := restly.PutXML(req, "https://mockbin.com/request", xmlBody, "?foo=bar")
 	
-res, err := restly.PostXML(req, "https://mockbin.com/request", xmlBody, "?foo=bar")
+res, statusCode, err := restly.PostXML(req, "https://mockbin.com/request", xmlBody, "?foo=bar")
 	
-res, err := restly.PatchXML(req, "https://mockbin.com/request", xmlBody, "?foo=bar")
+res, statusCode, err := restly.PatchXML(req, "https://mockbin.com/request", xmlBody, "?foo=bar")
 ```
 
 ## Motivation
